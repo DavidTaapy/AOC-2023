@@ -1,0 +1,5 @@
+﻿  Day 2.cpp
+C:\Users\david\source\repos\AOC-2023\Day 2\Day 2\Day 2.cpp(16,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\david\source\repos\AOC-2023\Day 2\Day 2\Day 2.cpp(13): warning C4715: 'getFirstDigitFromFront': not all control paths return a value
+C:\Users\david\source\repos\AOC-2023\Day 2\Day 2\Day 2.cpp(19): warning C4715: 'getFirstDigitFromBack': not all control paths return a value
+  Day 2.vcxproj -> C:\Users\david\source\repos\AOC-2023\Day 2\x64\Debug\Day 2.exe
