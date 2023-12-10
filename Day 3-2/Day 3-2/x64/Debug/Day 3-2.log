@@ -1,0 +1,7 @@
+﻿  Day 3-2.cpp
+C:\Users\david\source\repos\AOC-2023\Day 3-2\Day 3-2\Day 3-2.cpp(43,84): warning C4267: 'argument': conversion from 'size_t' to 'long', possible loss of data
+C:\Users\david\source\repos\AOC-2023\Day 3-2\Day 3-2\Day 3-2.cpp(43,61): warning C4267: 'argument': conversion from 'size_t' to 'long', possible loss of data
+C:\Users\david\source\repos\AOC-2023\Day 3-2\Day 3-2\Day 3-2.cpp(98,17): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+C:\Users\david\source\repos\AOC-2023\Day 3-2\Day 3-2\Day 3-2.cpp(99,17): warning C4267: 'initializing': conversion from 'size_t' to 'long', possible loss of data
+C:\Users\david\source\repos\AOC-2023\Day 3-2\Day 3-2\Day 3-2.cpp(110,18): warning C4834: discarding return value of function with 'nodiscard' attribute
+  Day 3-2.vcxproj -> C:\Users\david\source\repos\AOC-2023\Day 3-2\x64\Debug\Day 3-2.exe
