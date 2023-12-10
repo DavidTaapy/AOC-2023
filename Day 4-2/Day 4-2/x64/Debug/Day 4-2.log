@@ -1,0 +1,3 @@
+﻿  Day 4-2.cpp
+C:\Users\david\source\repos\AOC-2023\Day 4-2\Day 4-2\Day 4-2.cpp(60,52): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+  Day 4-2.vcxproj -> C:\Users\david\source\repos\AOC-2023\Day 4-2\x64\Debug\Day 4-2.exe
