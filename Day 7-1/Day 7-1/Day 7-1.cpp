@@ -13,12 +13,11 @@ long long calculateTotalWinnings(vector<pair<string, long long>> cardBidVector);
 bool compareHandsReverse(pair<string, long long> handOne, pair<string, long long> handTwo);
 int determineCardType(string);
 int determineCardTypeWithCardFreq(unordered_map<char, int> cardFreq);
-string replaceChar(string origString, char toReplace, char replacement);
-pair<set<char>, unordered_map<char, int>> getCardInfo(string cards);
+unordered_map<char, int> getCardInfo(string cards);
 
 unordered_map<char, int> cardValDict = {
         {'2', 1}, {'3', 2}, {'4', 3}, {'5', 4}, {'6', 5}, {'7', 6}, {'8', 7}, {'9', 8},
-        {'T', 9}, {'J', 0}, {'Q', 11}, {'K', 12}, {'A', 13}
+        {'T', 9}, {'J', 10}, {'Q', 11}, {'K', 12}, {'A', 13}
 };
 
 bool compareHandsReverse(pair<string, long long> handOne, pair<string, long long> handTwo) {
@@ -49,46 +48,19 @@ long long calculateTotalWinnings(vector<pair<string, long long>> cardBidVector) 
 }
 
 int determineCardType(string cards) {
-    pair<set<char>, unordered_map<char, int>> cardInfo = getCardInfo(cards);
-    set<char> presentChars = cardInfo.first;
-    unordered_map<char, int> cardFreq = cardInfo.second;
+    unordered_map<char, int> cardFreq = getCardInfo(cards);
 
-    if (presentChars.find('J') == presentChars.end()) return determineCardTypeWithCardFreq(cardFreq);
-    else {
-        int bestCardType = 0;
-        for (char possCard : presentChars) {
-            string replacedCards = replaceChar(cards, 'J', possCard);
-            pair<set<char>, unordered_map<char, int>> cardInfo = getCardInfo(replacedCards);
-            set<char> presentChars = cardInfo.first;
-            unordered_map<char, int> cardFreq = cardInfo.second;
-
-            int cardType = determineCardTypeWithCardFreq(cardFreq);
-            if (cardType > bestCardType) bestCardType = cardType;
-        }
-
-        return bestCardType;
-    }
+    return determineCardTypeWithCardFreq(cardFreq);
 }
 
-pair<set<char>, unordered_map<char, int>> getCardInfo(string cards) {
+unordered_map<char, int> getCardInfo(string cards) {
     unordered_map<char, int> cardFreq;
-    set<char> presentChars;
     for (int i = 0; i < cards.size(); i++) {
         char card = cards[i];
         cardFreq[card]++;
-        presentChars.insert(card);
     }
 
-    return make_pair(presentChars, cardFreq);
-}
-
-string replaceChar(string origString, char toReplace, char replacement) {
-    string copyString = origString;
-    for (int i = 0; i < copyString.size(); i++) {
-        if (copyString[i] == toReplace) copyString[i] = replacement;
-    }
-
-    return copyString;
+    return cardFreq;
 }
 
 int determineCardTypeWithCardFreq(unordered_map<char, int> cardFreq) {
